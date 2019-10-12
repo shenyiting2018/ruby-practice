@@ -39,4 +39,4 @@ Facebook and its founder must release documents and electronic correspondence to
 
 puts("using string to call with pattern " + string.count_words('and').to_s)
 puts("using string to call without pattern " + "hello hello world ".count_words().to_s)
-puts(count_words2)
+puts(count_words2())
