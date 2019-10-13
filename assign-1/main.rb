@@ -2,6 +2,31 @@
 
 require_relative('conversation_printer.rb')
 require_relative('html_filter.rb')
+require_relative('new_hash.rb')
+
+# Question 5
+puts "======================Question 5==========================="
+puts "----Running h1.merge(h2)-----"
+h1 = { "a" => 100, "b" => 200 }
+h2 = { "b" => 254, "c" => 300 }
+puts "Using merge without block, created new hash with merged result: #{h1.merge(h2)}"
+puts "After merge without block, h1 stay still, = #{h1}"
+
+puts "----Running h1.merge(h2) with block----"
+puts "Using merge without block, created new hash with merged result: #{h1.merge(h2){|key, val1, val2| val2 - val1}}"  
+puts "After merge without block, h1 stay still, = #{h1}"
+
+puts "--- Running h1.merge!(h2)-----"
+h1 = { "a" => 100, "b" => 200 }
+h2 = { "b" => 254, "c" => 300 }
+puts "Using merge without block, created new hash with merged result: #{h1.merge!(h2)}"
+puts "After merge without block, h1 stay still, = #{h1}"
+
+puts "----Running h1.merge!(h2) with block----"
+h1 = { "a" => 100, "b" => 200 }
+puts "Using merge without block, created new hash with merged result: #{h1.merge!(h2){|key, val1, val2| val2 - val1}}"
+puts "After merge without block, h1 stay still, = #{h1}"
+
 
 # Question 6
 puts "=======================Question 6==========================="
