@@ -46,4 +46,17 @@ puts a[2...5]
 #for each
 a.each_char {|x| print x,'-'}
 
+# expression interpretation
+def capitalize(string)
+    return string.capitalize()
+end
 
+action = 'insert' 
+
+the_string = %{
+    Expression interpretation allow string to be #{action} to a string template.
+    For example,
+    I can capitalize 'word' to #{capitalize(:word)}.
+}
+
+puts the_string
