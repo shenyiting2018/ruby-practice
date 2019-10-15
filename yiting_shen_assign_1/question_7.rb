@@ -14,8 +14,6 @@ class ConversationPrinter
     end
 
     def print
-        puts "Start scanning content for #{@query_param}"
-
         # We only allow two types of query params
         if @query_param != 'ADVISOR' and  @query_param != 'STUDENT'
             puts 'Illegal query param, must be either ADVISOR or STUDENT'
@@ -27,8 +25,6 @@ class ConversationPrinter
         data = data.split("\n")
         # According to question, new line starts with 5 spaces
         whitespace = " " * 5
-
-        puts "File #{@file_name} imported, start scanning..."
 
         iter = 0
         while iter < data.length
@@ -45,16 +41,6 @@ class ConversationPrinter
             else
                 iter += 1
             end
-        end
-        
-        puts "Scanning completed"
+        end        
     end
 end
-
-# test = ConversationPrinter.new('ADVISOR', './conversation.txt')
-# test.print
-# test2 = ConversationPrinter.new('STUDENT', './conversation.txt')
-# test2.print
-# test3 = ConversationPrinter.new('FAIL', './conversation.txt')
-# test3.print
-

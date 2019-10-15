@@ -1,7 +1,7 @@
 class HTMLFilter
+
     def initialize(template)
         @template = template
-        @filtered_result = ""
     end
 
     def filter
@@ -9,6 +9,8 @@ class HTMLFilter
             puts "Empty string, return"
             return
         end
+
+        filtered_result = ""
 
         # Split to lines by line breakers
         strings = @template.split("\n")
@@ -45,15 +47,15 @@ class HTMLFilter
                 # If entire line is whitespace, skip
                 if unfiltered_part.strip.length != 0
                     puts "unfilter part:#{unfiltered_part}"
-                    @filtered_result << unfiltered_part 
-                    @filtered_result << "\n"
+                    filtered_result << unfiltered_part 
+                    filtered_result << "\n"
                 end
             else
-                @filtered_result << line
-                @filtered_result << "\n"
+                filtered_result << line
+                filtered_result << "\n"
             end
             line_iter += 1
         end
-        puts @filtered_result
+        return filtered_result
     end
 end

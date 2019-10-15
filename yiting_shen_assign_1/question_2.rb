@@ -10,14 +10,19 @@ class Search
 
 		# Search with key value pair
 		query.each do |key, value|
-			puts "Start querying students, key=#{key}, value=#{value}"
 			for student in students
 				if student[key] == value
 					results.push(student)
 				end
 			end
 		end
-		puts "Complete searching, formatting..."
+
+		# If no match, print 
+		if results.empty?
+			puts "No match is found"
+			return 
+		end
+
 		# Format the output
 		table_content = %{
 First Name     Last Name     Phone#}
@@ -26,18 +31,6 @@ First Name     Last Name     Phone#}
 #{student[:firstname]}     #{student[:lastname]}     #{student[:phonenumber]}}
 			table_content << data_template
 		end
-		puts "Completed"
 		puts table_content
-		return table_content
 	end
 end
-
-students = [
-    {:firstname => "John", :lastname => "LastnameJohn", :phonenumber => 123456789},
-    {:firstname => "Ken", :lastname => "Lastnameken",:phonenumber => 456734233},
-    {:firstname => "Marisa", :lastname => "lastnamemarisa", :phonenumber => 443234567},
-    {:firstname => "Ken", :lastname => "Kenlastname", :phonenumber => 456734244}
-]
-
-search_instance = Search.new
-search_results = search_instance.search_students(students, firstname:"Ken")

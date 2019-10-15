@@ -1,9 +1,10 @@
 class Compress
+	# Getter for string array
 	def string_array
-		puts "Calling getter to get string_array"
 		@string_array
 	end
 
+	# Getter for index array
 	def index_array
 		@index_array
 	end
@@ -28,7 +29,3 @@ class Compress
 		# breakdown string to two arrays
 	end
 end
-
-instance = Compress.new("i love you but do you love me")
-p instance.string_array
-p instance.index_array
