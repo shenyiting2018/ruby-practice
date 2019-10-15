@@ -1,0 +1,7 @@
+students = [
+{:firstname => "John", :lastname => "LastnameJohn", :phonenumber => 123456789} 
+{:firstname => "Ken", :lastname => "Lastnameken", :phonenumber => 456734244} 
+{:firstname => "Marisa", :lastname => "lastnamemarisa", :phonenumber => 443234567}
+{:firstname => "Ken", :lastname => "Kenlastname", :phonenumber => 456734244} 
+]
+
