@@ -46,6 +46,9 @@ search_instance = Search.new
 puts "\nSearch for student whose first name is 'Ken'"
 search_instance.search_students(students, firstname:"Ken")
 
+puts "\nSearch for student whose first name is 'Ken' and phonenumber is '456734244'"
+search_instance.search_students(students, firstname:"Ken", phonenumber:"456734244")
+
 puts "\nSearch for student who doesn't exist"
 search_instance.search_students(students, firstname:"Bill")
 

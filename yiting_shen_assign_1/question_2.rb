@@ -6,13 +6,13 @@ class Search
 			return
 		end
 
-		results = Array.new
+		results = students
 
 		# Search with key value pair
-		query.each do |key, value|
-			for student in students
-				if student[key] == value
-					results.push(student)
+		for student in students
+			query.each do |key, value|
+				if student[key] != value
+					results.delete(student)
 				end
 			end
 		end
