@@ -17,7 +17,7 @@ else
 		socket = TCPSocket.new('127.0.0.1', port)
 		socket.write(message)
 	rescue ArgumentError
-		puts "post is not a number"
+		puts "port is not a number"
 	rescue
 		puts "connection error ...exiting...#{$!}"
 	end

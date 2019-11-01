@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head> 
+  	<link href="style.css" rel="stylesheet" type="text/css">
+  	<title><%= @titile || "songs by sinatra"%></title>
+  </head>
+<body>
+	<h1> Songs by sinatra </h1>
+
+	<img src="images/WechatIMG1.jpeg" alt="Yuan Fang" width=500>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about">About</a></li>
+		<li><a href="/contact">Contant</a></li>
+	</ul>
+
+<%= yield %>
+
+</body>
+</html>

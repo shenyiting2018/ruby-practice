@@ -12,9 +12,11 @@ puts "listening at port #{port}"
 server = TCPServer.new("127.0.0.1", port)
 
 Socket.accept_loop(server) do |connection|
-	request  connection.gets
-
+	request = connection.gets
+	puts "Before address request = #{request}"
 	request = request.gsub(/GET\ \//, '').gsub(/\ HTTP.*/,'')
+	puts "After address request = #{request}"
+
 	filename = request.chomp
 
 	if filename == ""
@@ -31,7 +33,7 @@ Socket.accept_loop(server) do |connection|
 
 
 		connection.print content
-	rescue Error::ENOENT
+	rescue Errno::ENOENT
 		puts "requested file #{filename} not found"
 
 		connection.print "HTTP/1.1 404 Not Found\r\n"
