@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-require './song'
+# require './song'
 
 get '/' do 
 	@title = "home"
